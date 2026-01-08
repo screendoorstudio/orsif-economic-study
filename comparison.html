@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2018 vs 2025 Comparison | ORSIF Economic Impact Study</title>
+    <meta name="description" content="Side-by-side comparison of 2018 and 2025 ORSIF Economic Impact Study results">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body data-page="comparison">
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/orsif_shield_white.png" alt="ORSIF">
+                <span class="logo-text">Economic Impact Study</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Overview</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="comparison.html" class="active">2018 vs 2025</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="https://www.orsif.org" target="_blank">ORSIF.org</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>2018 vs 2025 Comparison</h1>
+            <p class="section-intro">
+                What's changed in the economic impact of occupational radiation exposure
+            </p>
+        </div>
+    </header>
+
+    <!-- Summary Cards -->
+    <section>
+        <div class="container">
+            <div class="comparison-grid">
+                <div class="comparison-column baseline">
+                    <div class="comparison-header">
+                        <h3>2018 Baseline</h3>
+                        <div class="year">2018</div>
+                    </div>
+                    <div class="comparison-content text-center">
+                        <div class="big-number total-value">$48.99M</div>
+                        <div class="big-number-label">Annual Economic Cost</div>
+                    </div>
+                </div>
+
+                <div class="comparison-column updated">
+                    <div class="comparison-header">
+                        <h3>2025 Estimate</h3>
+                        <div class="year">2025</div>
+                    </div>
+                    <div class="comparison-content text-center">
+                        <div class="big-number total-value">$88.7M</div>
+                        <div class="big-number-label">Annual Economic Cost</div>
+                        <div class="big-number-comparison increase" style="margin-top: var(--spacing-md);">
+                            +81% increase
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parameter Comparison -->
+    <section style="background-color: var(--color-bg-alt);">
+        <div class="container">
+            <h2 class="text-center">Parameter Changes</h2>
+            <p class="section-intro text-center">
+                Key inputs that drive the economic model
+            </p>
+
+            <div class="cost-table-container">
+                <table class="cost-table">
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>2018 Value</th>
+                            <th>2025 Value</th>
+                            <th>Change</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="category-header">
+                            <td colspan="5"><strong>Economic Valuations</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Value of Statistical Life (VSL)</td>
+                            <td class="number">$9,000,000</td>
+                            <td class="number">$13,600,000</td>
+                            <td class="number change positive">+51%</td>
+                            <td>HHS 2025</td>
+                        </tr>
+                        <tr>
+                            <td>Non-Fatal Cancer Cost</td>
+                            <td class="number">$200,000</td>
+                            <td class="number">$250,000</td>
+                            <td class="number change positive">+25%</td>
+                            <td>Inflation-adjusted</td>
+                        </tr>
+                        <tr>
+                            <td>Physician MSD Cost</td>
+                            <td class="number">$45,000</td>
+                            <td class="number">$94,285</td>
+                            <td class="number change positive">+109%</td>
+                            <td>NSC 2023</td>
+                        </tr>
+                        <tr>
+                            <td>Support Staff MSD Cost</td>
+                            <td class="number">$12,000</td>
+                            <td class="number">$47,316</td>
+                            <td class="number change positive">+294%</td>
+                            <td>NSC 2023</td>
+                        </tr>
+
+                        <tr class="category-header">
+                            <td colspan="5"><strong>Workforce</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Interventional Cardiologists</td>
+                            <td class="number">3,255</td>
+                            <td class="number">5,639</td>
+                            <td class="number change positive">+73%</td>
+                            <td>AAMC 2023</td>
+                        </tr>
+                        <tr>
+                            <td>Interventional Radiologists</td>
+                            <td class="number">3,358</td>
+                            <td class="number">3,358</td>
+                            <td class="number change">0%</td>
+                            <td>Placeholder</td>
+                        </tr>
+                        <tr>
+                            <td>Electrophysiologists</td>
+                            <td class="number">1,925</td>
+                            <td class="number">2,629</td>
+                            <td class="number change positive">+37%</td>
+                            <td>ABIM 2025</td>
+                        </tr>
+                        <tr>
+                            <td>Nurses</td>
+                            <td class="number">13,000</td>
+                            <td class="number">13,000</td>
+                            <td class="number change">0%</td>
+                            <td>Placeholder</td>
+                        </tr>
+                        <tr>
+                            <td>Technicians</td>
+                            <td class="number">11,300</td>
+                            <td class="number">11,300</td>
+                            <td class="number change">0%</td>
+                            <td>Placeholder</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Workforce</strong></td>
+                            <td class="number"><strong>32,838</strong></td>
+                            <td class="number"><strong>35,926</strong></td>
+                            <td class="number change positive"><strong>+9%</strong></td>
+                            <td></td>
+                        </tr>
+
+                        <tr class="category-header">
+                            <td colspan="5"><strong>Clinical Data</strong></td>
+                        </tr>
+                        <tr>
+                            <td>MSD Career Prevalence</td>
+                            <td class="number">53%</td>
+                            <td class="number">66%</td>
+                            <td class="number change positive">+13 pts</td>
+                            <td>SCAI 2023</td>
+                        </tr>
+                        <tr>
+                            <td>Radial Access Rate</td>
+                            <td class="number">30%</td>
+                            <td class="number">68%</td>
+                            <td class="number change positive">+38 pts</td>
+                            <td>SCAI 2022</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Breakdown Comparison -->
+    <section>
+        <div class="container">
+            <h2 class="text-center">Cost Breakdown Comparison</h2>
+
+            <div class="chart-container" style="max-width: 800px; margin: 0 auto;">
+                <div class="chart-wrapper" style="height: 400px;">
+                    <canvas id="comparison-chart"></canvas>
+                </div>
+            </div>
+
+            <div class="cost-table-container" style="margin-top: var(--spacing-xl);">
+                <table class="cost-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Group</th>
+                            <th>2018 Cases</th>
+                            <th>2018 Cost</th>
+                            <th>2025 Cases</th>
+                            <th>2025 Cost</th>
+                            <th>Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fatal Cancer</td>
+                            <td>Physicians</td>
+                            <td class="number">1.5</td>
+                            <td class="number">$13,500,000</td>
+                            <td class="number">2.3</td>
+                            <td class="number">$31,704,000</td>
+                            <td class="number change positive">+135%</td>
+                        </tr>
+                        <tr>
+                            <td>Fatal Cancer</td>
+                            <td>Nurses/Techs</td>
+                            <td class="number">2.5</td>
+                            <td class="number">$22,500,000</td>
+                            <td class="number">2.4</td>
+                            <td class="number">$33,048,000</td>
+                            <td class="number change positive">+47%</td>
+                        </tr>
+                        <tr>
+                            <td>Non-Fatal Cancer</td>
+                            <td>Physicians</td>
+                            <td class="number">1.5</td>
+                            <td class="number">$300,000</td>
+                            <td class="number">2.3</td>
+                            <td class="number">$582,500</td>
+                            <td class="number change positive">+94%</td>
+                        </tr>
+                        <tr>
+                            <td>Non-Fatal Cancer</td>
+                            <td>Nurses/Techs</td>
+                            <td class="number">2.5</td>
+                            <td class="number">$500,000</td>
+                            <td class="number">2.4</td>
+                            <td class="number">$607,500</td>
+                            <td class="number change positive">+22%</td>
+                        </tr>
+                        <tr>
+                            <td>MSDs</td>
+                            <td>Physicians</td>
+                            <td class="number">155</td>
+                            <td class="number">$6,975,000</td>
+                            <td class="number">209</td>
+                            <td class="number">$19,726,565</td>
+                            <td class="number change positive">+183%</td>
+                        </tr>
+                        <tr>
+                            <td>MSDs</td>
+                            <td>Nurses/Techs</td>
+                            <td class="number">435</td>
+                            <td class="number">$5,220,000</td>
+                            <td class="number">437</td>
+                            <td class="number">$20,677,092</td>
+                            <td class="number change positive">+296%</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td colspan="2"><strong>TOTAL</strong></td>
+                            <td class="number"></td>
+                            <td class="number"><strong>$48,995,000</strong></td>
+                            <td class="number"></td>
+                            <td class="number"><strong>$106,345,657</strong></td>
+                            <td class="number"><strong>+117%</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p style="font-size: 0.9rem; color: var(--color-text-light); text-align: center; margin-top: var(--spacing-md);">
+                Note: 2025 values shown with 2025 workforce and placeholder support staff counts.
+                Actual total may vary based on confirmed nurse/technician counts.
+            </p>
+        </div>
+    </section>
+
+    <!-- What's Driving the Increase -->
+    <section style="background-color: var(--color-bg-alt);">
+        <div class="container">
+            <h2 class="text-center">What's Driving the Increase</h2>
+
+            <div class="findings-grid">
+                <div class="finding-card">
+                    <h3>VSL Increase</h3>
+                    <div class="value" style="color: var(--color-cancer);">+$31.7M</div>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light);">
+                        The federal VSL increased 51% from $9M to $13.6M, directly impacting
+                        fatal cancer valuations which account for 73% of total costs.
+                    </p>
+                </div>
+
+                <div class="finding-card">
+                    <h3>MSD Cost Increase</h3>
+                    <div class="value" style="color: var(--color-msd);">+$28.2M</div>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light);">
+                        Spine injury and MSD costs have more than doubled since 2018,
+                        with support staff MSD costs up 294%.
+                    </p>
+                </div>
+
+                <div class="finding-card">
+                    <h3>Workforce Growth</h3>
+                    <div class="value" style="color: var(--color-physician);">+9%</div>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light);">
+                        Interventional cardiologists increased 73% and electrophysiologists 37%,
+                        expanding the at-risk population.
+                    </p>
+                </div>
+
+                <div class="finding-card">
+                    <h3>No Improvement in MSDs</h3>
+                    <div class="value" style="color: var(--color-warning);">66%</div>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light);">
+                        Despite awareness, MSD prevalence increased from 53% to 66%,
+                        indicating current PPE solutions remain inadequate.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+        <div class="container text-center">
+            <h2>Explore the Interactive Calculator</h2>
+            <p style="max-width: 600px; margin: 0 auto var(--spacing-lg);">
+                Adjust parameters yourself to see how changes in workforce, risk factors,
+                and economic valuations affect the total economic impact.
+            </p>
+            <a href="calculator.html" class="btn btn-primary">Launch Calculator</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/orsif_logo_white.png" alt="ORSIF">
+                    </div>
+                    <p>
+                        Organization for Occupational Radiation Safety in Interventional Fluoroscopy
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>This Study</h4>
+                    <ul>
+                        <li><a href="index.html">Overview</a></li>
+                        <li><a href="calculator.html">Calculator</a></li>
+                        <li><a href="comparison.html">2018 vs 2025</a></li>
+                        <li><a href="methodology.html">Methodology</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>ORSIF Resources</h4>
+                    <ul>
+                        <li><a href="https://www.orsif.org" target="_blank">ORSIF.org</a></li>
+                        <li><a href="https://www.orsif.org/faqs" target="_blank">FAQs</a></li>
+                        <li><a href="https://www.orsif.org/guidelines" target="_blank">Guidelines</a></li>
+                        <li><a href="https://www.orsif.org/join" target="_blank">Join ORSIF</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>
+                        <a href="mailto:info@orsif.org">info@orsif.org</a>
+                    </p>
+                    <p>Washington, D.C.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Organization for Occupational Radiation Safety in Interventional Fluoroscopy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/calculator.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

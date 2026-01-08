@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic Impact Calculator | ORSIF</title>
+    <meta name="description" content="Interactive calculator for estimating economic impacts of radiation exposures in interventional fluoroscopy">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body data-page="calculator">
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/orsif_shield_white.png" alt="ORSIF">
+                <span class="logo-text">Economic Impact Study</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Overview</a></li>
+                <li><a href="calculator.html" class="active">Calculator</a></li>
+                <li><a href="comparison.html">2018 vs 2025</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="https://www.orsif.org" target="_blank">ORSIF.org</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Economic Impact Calculator</h1>
+            <p class="section-intro">
+                Adjust workforce counts, risk parameters, and economic valuations to explore different scenarios
+            </p>
+        </div>
+    </header>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section" style="padding-top: var(--spacing-xl);">
+        <div class="container-wide">
+            <div class="calculator-container">
+                <!-- Input Panel -->
+                <div class="input-panel">
+                    <!-- Preset Selector -->
+                    <div class="preset-selector">
+                        <label for="preset-selector">Scenario</label>
+                        <select id="preset-selector">
+                            <option value="2025" selected>2025 Estimate</option>
+                            <option value="2018">2018 Baseline</option>
+                            <option value="custom">Custom</option>
+                        </select>
+                    </div>
+
+                    <!-- Tabs -->
+                    <div class="input-tabs">
+                        <button class="input-tab active" data-tab="workforce-tab">Workforce</button>
+                        <button class="input-tab" data-tab="risk-tab">Risk</button>
+                        <button class="input-tab" data-tab="valuation-tab">Valuation</button>
+                    </div>
+
+                    <!-- Workforce Tab -->
+                    <div class="tab-content active" id="workforce-tab">
+                        <h4>Physician Workforce</h4>
+
+                        <div class="slider-group">
+                            <div class="slider-label">
+                                <label>Interventional Cardiologists</label>
+                                <span class="slider-value" id="interventionalCardiologists-value">5,639</span>
+                            </div>
+                            <input type="range" data-param="interventionalCardiologists" data-format="number"
+                                   min="1000" max="10000" step="100" value="5639">
+                            <span class="slider-source">Source: AAMC 2023</span>
+                        </div>
+
+                        <div class="slider-group placeholder">
+                            <div class="slider-label">
+                                <label>Interventional Radiologists <span class="placeholder-badge">Placeholder</span></label>
+                                <span class="slider-value" id="interventionalRadiologists-value">3,358</span>
+                            </div>
+                            <input type="range" data-param="interventionalRadiologists" data-format="number"
+                                   min="1000" max="10000" step="100" value="3358">
+                            <span class="slider-source">Using 2018 value - needs update</span>
+                        </div>
+
+                        <div class="slider-group">
+                            <div class="slider-label">
+                                <label>Electrophysiologists</label>
+                                <span class="slider-value" id="electrophysiologists-value">2,629</span>
+                            </div>
+                            <input type="range" data-param="electrophysiologists" data-format="number"
+                                   min="500" max="5000" step="50" value="2629">
+                            <span class="slider-source">Source: ABIM 2025</span>
+                        </div>
+
+                        <h4 style="margin-top: var(--spacing-lg);">Support Staff</h4>
+
+                        <div class="slider-group placeholder">
+                            <div class="slider-label">
+                                <label>Nurses <span class="placeholder-badge">Placeholder</span></label>
+                                <span class="slider-value" id="nurses-value">13,000</span>
+                            </div>
+                            <input type="range" data-param="nurses" data-format="number"
+                                   min="5000" max="30000" step="500" value="13000">
+                            <span class="slider-source">Using 2018 estimate</span>
+                        </div>
+
+                        <div class="slider-group placeholder">
+                            <div class="slider-label">
+                                <label>Technicians <span class="placeholder-badge">Placeholder</span></label>
+                                <span class="slider-value" id="technicians-value">11,300</span>
+                            </div>
+                            <input type="range" data-param="technicians" data-format="number"
+                                   min="5000" max="30000" step="500" value="11300">
+                            <span class="slider-source">Cath-lab specific (BLS broader: 64,700)</span>
+                        </div>
+                    </div>
+
+                    <!-- Risk Tab -->
+                    <div class="tab-content" id="risk-tab">
+                        <h4>Cancer Risk Parameters</h4>
+
+                        <div class="slider-group">
+                            <div class="slider-label">
+                                <label>Physician Cancer Risk (lifetime)</label>
+                                <span class="slider-value" id="physicianCancerRisk-value">1.0%</span>
+                            </div>
+                            <input type="range" data-param="physicianCancerRisk" data-format="percent"
+                                   min="0.005" max="0.02" step="0.001" value="0.01">
+                            <span class="slider-source">BEIR VII: 1% at 100 mSv exposure</span>
+                        </div>
+
+                        <div class="slider-group">
+                            <div class="slider-label">
+                                <label>Support Staff Cancer Risk (lifetime)</label>
+                                <span class="slider-value" id="supportCancerRisk-value">0.5%</span>
+                            </div>
+                            <input type="range" data-param="supportCancerRisk" data-format="percent"
+                                   min="0.0025" max="0.01" step="0.0005" value="0.005">
+                            <span class="slider-source">0.5% at 50 mSv (lower exposure)</span>
+                        </div>
+
+                        <h4 style="margin-top: var(--spacing-lg);">MSD Parameters</h4>
+
+                        <div class="slider-group">
+                            <div class="slider-label">
+                                <label>MSD Annual Incidence</label>
+                                <span class="slider-value" id="msdAnnualIncidence-value">1.8%</span>
+                            </div>
+                            <input type="range" data-param="msdAnnualIncidence" data-format="percent"
+                                   min="0.01" max="0.03" step="0.001" value="0.018">
+                            <span class="slider-source">From 30-60% career prevalence / 25 years</span>
+                        </div>
+
+                        <div class="slider-group">
+                            <div class="slider-label">
+                                <label>Career Duration</label>
+                                <span class="slider-value" id="careerDuration-value">25 years</span>
+                            </div>
+                            <input type="range" data-param="careerDuration" data-format="years"
+                                   min="20" max="35" step="1" value="25">
+                            <span class="slider-source">Average interventional career length</span>
+                        </div>
+                    </div>
+
+                    <!-- Valuation Tab -->
+                    <div class="tab-content" id="valuation-tab">
+                        <h4>Cancer Valuations</h4>
+
+                        <div class="slider-group">
+                            <div class="slider-label">
+                                <label>Value of Statistical Life (VSL)</label>
+                                <span class="slider-value" id="vsl-value">$13.6M</span>
+                            </div>
+                            <input type="range" data-param="vsl" data-format="currency"
+                                   min="5000000" max="20000000" step="500000" value="13600000">
+                            <span class="slider-source">HHS 2025 (range: $6.3M - $20.7M)</span>
+                        </div>
+
+                        <div class="slider-group placeholder">
+                            <div class="slider-label">
+                                <label>Non-Fatal Cancer Cost <span class="placeholder-badge">Placeholder</span></label>
+                                <span class="slider-value" id="nonFatalCancerCost-value">$250K</span>
+                            </div>
+                            <input type="range" data-param="nonFatalCancerCost" data-format="currency"
+                                   min="100000" max="500000" step="25000" value="250000">
+                            <span class="slider-source">Inflation-adjusted from 2018</span>
+                        </div>
+
+                        <h4 style="margin-top: var(--spacing-lg);">MSD Valuations</h4>
+
+                        <div class="slider-group">
+                            <div class="slider-label">
+                                <label>Physician MSD Cost</label>
+                                <span class="slider-value" id="msdPhysicianCost-value">$94,285</span>
+                            </div>
+                            <input type="range" data-param="msdPhysicianCost" data-format="currency"
+                                   min="30000" max="150000" step="5000" value="94285">
+                            <span class="slider-source">NSC 2023 Spine Injury</span>
+                        </div>
+
+                        <div class="slider-group">
+                            <div class="slider-label">
+                                <label>Support Staff MSD Cost</label>
+                                <span class="slider-value" id="msdSupportCost-value">$47,316</span>
+                            </div>
+                            <input type="range" data-param="msdSupportCost" data-format="currency"
+                                   min="10000" max="80000" step="2500" value="47316">
+                            <span class="slider-source">NSC 2023 Average MSD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Panel -->
+                <div class="results-panel">
+                    <!-- Total Card -->
+                    <div class="result-card highlight">
+                        <h3>Total Annual Economic Cost</h3>
+                        <div class="big-number" id="grand-total">$88.7M</div>
+                        <div class="big-number-comparison increase" id="comparison-text">
+                            +81% from 2018 baseline ($48.99M)
+                        </div>
+                    </div>
+
+                    <!-- Results Table -->
+                    <div class="results-breakdown">
+                        <h3>Cost Breakdown</h3>
+                        <div class="cost-table-container">
+                            <table class="cost-table">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Group</th>
+                                        <th>Cases/Year</th>
+                                        <th>Cost/Case</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="results-tbody">
+                                    <!-- Populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Charts -->
+                    <div class="charts-row">
+                        <div class="chart-container">
+                            <h3>Cost by Category</h3>
+                            <div class="chart-wrapper">
+                                <canvas id="category-chart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="chart-container">
+                            <h3>Distribution by Group</h3>
+                            <div class="chart-wrapper">
+                                <canvas id="distribution-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sensitivity Analysis -->
+                    <div class="chart-container">
+                        <h3>Sensitivity Analysis: Impact of VSL</h3>
+                        <div class="chart-wrapper" style="height: 250px;">
+                            <canvas id="sensitivity-chart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Export Buttons -->
+                    <div class="export-buttons">
+                        <button class="btn btn-primary" id="export-pdf">Export PDF</button>
+                        <button class="btn btn-secondary" id="export-copy">Copy Results</button>
+                        <button class="btn btn-secondary" id="export-share">Share Link</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Link -->
+    <section style="background-color: var(--color-bg-alt);">
+        <div class="container text-center">
+            <h2>How Are These Numbers Calculated?</h2>
+            <p style="max-width: 600px; margin: 0 auto var(--spacing-lg);">
+                Learn about the methodology, data sources, and assumptions behind the economic model.
+            </p>
+            <a href="methodology.html" class="btn btn-primary">View Methodology</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/orsif_logo_white.png" alt="ORSIF">
+                    </div>
+                    <p>
+                        Organization for Occupational Radiation Safety in Interventional Fluoroscopy
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>This Study</h4>
+                    <ul>
+                        <li><a href="index.html">Overview</a></li>
+                        <li><a href="calculator.html">Calculator</a></li>
+                        <li><a href="comparison.html">2018 vs 2025</a></li>
+                        <li><a href="methodology.html">Methodology</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>ORSIF Resources</h4>
+                    <ul>
+                        <li><a href="https://www.orsif.org" target="_blank">ORSIF.org</a></li>
+                        <li><a href="https://www.orsif.org/faqs" target="_blank">FAQs</a></li>
+                        <li><a href="https://www.orsif.org/guidelines" target="_blank">Guidelines</a></li>
+                        <li><a href="https://www.orsif.org/join" target="_blank">Join ORSIF</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>
+                        <a href="mailto:info@orsif.org">info@orsif.org</a>
+                    </p>
+                    <p>Washington, D.C.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Organization for Occupational Radiation Safety in Interventional Fluoroscopy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/calculator.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic Impact Study | ORSIF</title>
+    <meta name="description" content="Economic Impacts of Radiation Exposures Associated with Interventional Fluoroscopy - 2025 Updated Analysis by ORSIF">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body data-page="home">
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/orsif_shield_white.png" alt="ORSIF">
+                <span class="logo-text">Economic Impact Study</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Overview</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="comparison.html">2018 vs 2025</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="https://www.orsif.org" target="_blank">ORSIF.org</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-logo">
+                <img src="images/orsif_logo_white.png" alt="ORSIF - Organization for Occupational Radiation Safety in Interventional Fluoroscopy">
+            </div>
+            <h1>Economic Impacts of <span class="highlight">Radiation Exposures</span></h1>
+            <p class="hero-subtitle">
+                Updated 2025 analysis of occupational health hazards in interventional fluoroscopy,
+                quantifying the economic costs of cancer and musculoskeletal disorders affecting healthcare professionals.
+            </p>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" id="hero-total">$88.7M</span>
+                    <span class="stat-label">Annual Economic Cost</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">+81%</span>
+                    <span class="stat-label">Increase from 2018</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">35,926</span>
+                    <span class="stat-label">At-Risk Clinicians</span>
+                </div>
+            </div>
+
+            <div class="join-cta mt-3">
+                <a href="calculator.html" class="btn btn-secondary" style="margin-right: 1rem;">Use Calculator</a>
+                <a href="https://www.orsif.org/join" class="btn btn-join" target="_blank">Join ORSIF</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Key Findings Section -->
+    <section class="key-findings">
+        <div class="container">
+            <h2 class="text-center">Key Parameter Updates</h2>
+            <p class="section-intro text-center">
+                Significant changes in economic valuations and workforce data since the 2018 study
+            </p>
+
+            <div class="findings-grid">
+                <div class="finding-card" id="vsl-value">
+                    <h3>Value of Statistical Life</h3>
+                    <div class="value">$13.6M</div>
+                    <div class="comparison">+51% from $9M</div>
+                    <div class="source">HHS Feb 2025</div>
+                </div>
+
+                <div class="finding-card msd" id="msd-physician">
+                    <h3>Physician MSD Cost</h3>
+                    <div class="value">$94,285</div>
+                    <div class="comparison">+109% from $45,000</div>
+                    <div class="source">NSC 2023</div>
+                </div>
+
+                <div class="finding-card physician" id="workforce">
+                    <h3>Total Workforce</h3>
+                    <div class="value">35,926</div>
+                    <div class="comparison">+9% from 32,838</div>
+                    <div class="source">AAMC, ABIM 2023-25</div>
+                </div>
+
+                <div class="finding-card support" id="msd-prevalence">
+                    <h3>MSD Prevalence</h3>
+                    <div class="value">66%</div>
+                    <div class="comparison">+13 pts from 53%</div>
+                    <div class="source">SCAI 2023 Survey</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Summary Table Section -->
+    <section class="summary-section">
+        <div class="container">
+            <h2 class="text-center">Cost Summary: 2018 vs 2025</h2>
+            <p class="section-intro text-center">
+                Annual economic costs of occupational health hazards associated with interventional fluoroscopy
+            </p>
+
+            <div class="cost-table-container">
+                <table class="cost-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Group</th>
+                            <th>2018 Cost</th>
+                            <th>2025 Cost</th>
+                            <th>Change</th>
+                        </tr>
+                    </thead>
+                    <tbody id="summary-tbody">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="text-center mt-2">
+                <a href="comparison.html" class="btn btn-primary">View Full Comparison</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Changed Section -->
+    <section class="changes-section">
+        <div class="container">
+            <h2 class="text-center">What's Changed Since 2018</h2>
+
+            <div class="findings-grid">
+                <div class="finding-card">
+                    <h3>Economic Valuations</h3>
+                    <ul style="text-align: left; padding-left: 1.5rem;">
+                        <li>VSL increased from $9M to $13.6M (federal standard)</li>
+                        <li>Spine injury costs doubled to $94,285</li>
+                        <li>General MSD costs up 294% to $47,316</li>
+                    </ul>
+                </div>
+
+                <div class="finding-card">
+                    <h3>Workforce Growth</h3>
+                    <ul style="text-align: left; padding-left: 1.5rem;">
+                        <li>Interventional cardiologists: +73% (3,255 to 5,639)</li>
+                        <li>Electrophysiologists: +37% (1,925 to 2,629)</li>
+                        <li>Total at-risk clinicians: +9%</li>
+                    </ul>
+                </div>
+
+                <div class="finding-card">
+                    <h3>Clinical Trends</h3>
+                    <ul style="text-align: left; padding-left: 1.5rem;">
+                        <li>Radial access rate: 30% to 68% (higher radiation)</li>
+                        <li>MSD prevalence: 53% to 66% (no improvement)</li>
+                        <li>Cervical injury rate: 10x general population</li>
+                    </ul>
+                </div>
+
+                <div class="finding-card">
+                    <h3>What's Not Included</h3>
+                    <ul style="text-align: left; padding-left: 1.5rem;">
+                        <li>Cataract costs (progression rates unknown)</li>
+                        <li>Cognitive decline impacts</li>
+                        <li>Physician replacement/turnover costs</li>
+                        <li>Lost procedure revenue</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%); color: white;">
+        <div class="container text-center">
+            <h2 style="color: white;">Explore the Interactive Calculator</h2>
+            <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto var(--spacing-lg);">
+                Adjust workforce counts, risk parameters, and economic valuations to see how changes
+                affect the total economic impact estimate.
+            </p>
+            <a href="calculator.html" class="btn btn-secondary">Launch Calculator</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>About This Study</h2>
+                <p>
+                    This interactive web application updates the 2018 ORSIF Economic Study, which first quantified
+                    the economic costs of occupational health hazards in interventional fluoroscopy at approximately
+                    $49 million annually in the United States.
+                </p>
+                <p>
+                    The 2025 update incorporates:
+                </p>
+                <ul>
+                    <li>Latest federal economic valuations (VSL, injury costs)</li>
+                    <li>Updated physician workforce data from AAMC and ABIM</li>
+                    <li>Recent MSD prevalence data from SCAI 2023 survey</li>
+                    <li>Current radiation exposure trends from occupational studies</li>
+                </ul>
+                <p>
+                    <strong>Note:</strong> Some data points are marked as "placeholder" where primary sources
+                    were unavailable or require paid subscriptions. These estimates use either 2018 baseline values
+                    or publicly available approximations.
+                </p>
+
+                <div class="warning-box">
+                    <h4>Disclaimer</h4>
+                    <p style="margin-bottom: 0;">
+                        This economic model is for informational and educational purposes only.
+                        It does not constitute medical, legal, or financial advice. The estimates
+                        presented are based on available data and modeling assumptions that may
+                        not reflect actual outcomes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/orsif_logo_white.png" alt="ORSIF">
+                    </div>
+                    <p>
+                        Organization for Occupational Radiation Safety in Interventional Fluoroscopy
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>This Study</h4>
+                    <ul>
+                        <li><a href="index.html">Overview</a></li>
+                        <li><a href="calculator.html">Calculator</a></li>
+                        <li><a href="comparison.html">2018 vs 2025</a></li>
+                        <li><a href="methodology.html">Methodology</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>ORSIF Resources</h4>
+                    <ul>
+                        <li><a href="https://www.orsif.org" target="_blank">ORSIF.org</a></li>
+                        <li><a href="https://www.orsif.org/faqs" target="_blank">FAQs</a></li>
+                        <li><a href="https://www.orsif.org/guidelines" target="_blank">Guidelines</a></li>
+                        <li><a href="https://www.orsif.org/join" target="_blank">Join ORSIF</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>
+                        <a href="mailto:info@orsif.org">info@orsif.org</a>
+                    </p>
+                    <p>Washington, D.C.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Organization for Occupational Radiation Safety in Interventional Fluoroscopy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/calculator.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

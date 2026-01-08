@@ -1,0 +1,346 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "lastUpdated": "2025-01-08",
+    "baselineYear": 2018,
+    "updateYear": 2025,
+    "title": "Economic Impacts of Radiation Exposures Associated with Interventional Fluoroscopy",
+    "organization": "Organization for Occupational Radiation Safety in Interventional Fluoroscopy (ORSIF)"
+  },
+  "presets": {
+    "2018": {
+      "name": "2018 Baseline",
+      "description": "Original ORSIF Economic Study values"
+    },
+    "2025": {
+      "name": "2025 Estimate",
+      "description": "Updated values with latest available data"
+    },
+    "custom": {
+      "name": "Custom",
+      "description": "Adjust parameters manually"
+    }
+  },
+  "workforce": {
+    "2018": {
+      "physicians": {
+        "interventionalCardiologists": 3255,
+        "interventionalRadiologists": 3358,
+        "electrophysiologists": 1925,
+        "total": 8538
+      },
+      "support": {
+        "nurses": 13000,
+        "technicians": 11300,
+        "total": 24300
+      },
+      "totalWorkforce": 32838
+    },
+    "2025": {
+      "physicians": {
+        "interventionalCardiologists": {
+          "value": 5639,
+          "source": "AAMC 2023 Physician Workforce Dashboard",
+          "url": "https://www.aamc.org/data-reports/workforce/interactive-data/active-physicians-largest-specialties-2019",
+          "placeholder": false
+        },
+        "interventionalRadiologists": {
+          "value": 3358,
+          "source": "Using 2018 value - needs AAMC/ABR update",
+          "url": null,
+          "placeholder": true
+        },
+        "electrophysiologists": {
+          "value": 2629,
+          "source": "ABIM Board Certification Statistics 2025",
+          "url": "https://www.abim.org/about/statistics-data/candidates-certified/",
+          "placeholder": false
+        },
+        "total": 11626
+      },
+      "support": {
+        "nurses": {
+          "value": 13000,
+          "source": "Using 2018 value - IMV Cath Lab Survey needed for update",
+          "url": null,
+          "placeholder": true
+        },
+        "technicians": {
+          "value": 11300,
+          "source": "Using 2018 cath-lab-specific estimate (BLS 64,700 CV technologists is broader category)",
+          "url": "https://www.bls.gov/ooh/healthcare/cardiovascular-technologists-and-technicians.htm",
+          "placeholder": true
+        },
+        "total": 24300
+      },
+      "totalWorkforce": 35926
+    }
+  },
+  "riskParameters": {
+    "cancerRisk": {
+      "physicians": {
+        "value": 0.01,
+        "description": "1% lifetime cancer risk at 100 mSv cumulative exposure",
+        "source": "BEIR VII Report (National Academies 2006)",
+        "notes": "Based on linear no-threshold (LNT) model"
+      },
+      "support": {
+        "value": 0.005,
+        "description": "0.5% lifetime cancer risk at 50 mSv cumulative exposure",
+        "source": "BEIR VII Report, adjusted for lower staff exposure",
+        "notes": "Staff positioned farther from radiation source"
+      }
+    },
+    "cancerFatality": {
+      "value": 0.5,
+      "description": "50% of occupational cancers are fatal",
+      "source": "General cancer mortality statistics"
+    },
+    "msdPrevalence": {
+      "career": {
+        "low": 0.30,
+        "mid": 0.53,
+        "high": 0.66,
+        "source2018": "SCAI 2014 Survey (53%)",
+        "source2025": "SCAI 2023 Survey (66%)"
+      },
+      "annualIncidence": {
+        "value": 0.018,
+        "description": "1.8% annual incidence (derived from 30-60% career prevalence / 25 years)",
+        "calculation": "Average of (0.30/25) and (0.60/25) = 0.018"
+      }
+    },
+    "careerDuration": {
+      "value": 25,
+      "description": "Average career duration in interventional medicine (years)"
+    }
+  },
+  "exposureData": {
+    "2018": {
+      "physicianCareerExposure": {
+        "low": 50,
+        "high": 200,
+        "unit": "mSv",
+        "source": "Picano et al. 2012"
+      },
+      "radialAccessRate": 0.30
+    },
+    "2025": {
+      "physicianAnnualDose": {
+        "value": 3.23,
+        "unit": "mSv",
+        "source": "Almalki et al. 2025 (5-year average 2018-2022)",
+        "placeholder": false
+      },
+      "nurseAnnualDose": {
+        "value": 1.17,
+        "unit": "mSv",
+        "source": "Almalki et al. 2025",
+        "placeholder": false
+      },
+      "techAnnualDose": {
+        "value": 1.13,
+        "unit": "mSv",
+        "source": "Almalki et al. 2025",
+        "placeholder": false
+      },
+      "radialAccessRate": {
+        "value": 0.68,
+        "source": "SCAI 2022 Data",
+        "placeholder": false
+      }
+    }
+  },
+  "valuations": {
+    "2018": {
+      "vsl": {
+        "value": 9000000,
+        "description": "Value of Statistical Life",
+        "source": "OSHA/EPA regulatory standard"
+      },
+      "nonFatalCancer": {
+        "value": 200000,
+        "description": "Cost per non-fatal cancer case (treatment + lost productivity)",
+        "source": "OSHA cost-of-illness estimate"
+      },
+      "msdPhysician": {
+        "value": 45000,
+        "description": "Cost per physician MSD (medical + wage indemnity adjusted for physician salary)",
+        "source": "Ohio Workers' Comp Study + salary adjustment"
+      },
+      "msdSupport": {
+        "value": 12000,
+        "description": "Cost per support staff MSD (medical + wage indemnity)",
+        "source": "Ohio Workers' Compensation Study 1999-2004"
+      }
+    },
+    "2025": {
+      "vsl": {
+        "value": 13600000,
+        "low": 6300000,
+        "high": 20700000,
+        "description": "Value of Statistical Life (2024 dollars)",
+        "source": "HHS Standard Regulatory Impact Analysis Values (February 2025)",
+        "url": "https://aspe.hhs.gov/reports/standard-ria-values",
+        "placeholder": false
+      },
+      "vsly": {
+        "discount3pct": 604000,
+        "discount7pct": 1006000,
+        "description": "Value of Statistical Life Year",
+        "source": "HHS Feb 2025"
+      },
+      "nonFatalCancer": {
+        "value": 250000,
+        "description": "Cost per non-fatal cancer case (inflation-adjusted estimate)",
+        "source": "Inflation-adjusted from 2018 value",
+        "placeholder": true
+      },
+      "msdPhysician": {
+        "value": 94285,
+        "description": "Cost per spine injury",
+        "source": "NSC Injury Facts 2023",
+        "url": "https://injuryfacts.nsc.org/work/costs/workers-compensation-costs/",
+        "placeholder": false
+      },
+      "msdSupport": {
+        "value": 47316,
+        "description": "Average cost per MSD claim",
+        "source": "NSC Injury Facts 2023",
+        "placeholder": false
+      }
+    }
+  },
+  "calculatedResults": {
+    "2018": {
+      "fatalCancerPhysicians": {
+        "cases": 1.5,
+        "costPerCase": 9000000,
+        "total": 13500000
+      },
+      "fatalCancerSupport": {
+        "cases": 2.5,
+        "costPerCase": 9000000,
+        "total": 22500000
+      },
+      "nonFatalCancerPhysicians": {
+        "cases": 1.5,
+        "costPerCase": 200000,
+        "total": 300000
+      },
+      "nonFatalCancerSupport": {
+        "cases": 2.5,
+        "costPerCase": 200000,
+        "total": 500000
+      },
+      "msdPhysicians": {
+        "cases": 155,
+        "costPerCase": 45000,
+        "total": 6975000
+      },
+      "msdSupport": {
+        "cases": 435,
+        "costPerCase": 12000,
+        "total": 5220000
+      },
+      "grandTotal": 48995000
+    }
+  },
+  "sliderConfig": {
+    "workforce": {
+      "interventionalCardiologists": { "min": 1000, "max": 10000, "step": 100 },
+      "interventionalRadiologists": { "min": 1000, "max": 10000, "step": 100 },
+      "electrophysiologists": { "min": 500, "max": 5000, "step": 50 },
+      "nurses": { "min": 5000, "max": 30000, "step": 500 },
+      "technicians": { "min": 5000, "max": 30000, "step": 500 }
+    },
+    "risk": {
+      "physicianCancerRisk": { "min": 0.005, "max": 0.02, "step": 0.001 },
+      "supportCancerRisk": { "min": 0.0025, "max": 0.01, "step": 0.0005 },
+      "msdIncidence": { "min": 0.01, "max": 0.03, "step": 0.001 },
+      "careerDuration": { "min": 20, "max": 35, "step": 1 }
+    },
+    "valuation": {
+      "vsl": { "min": 5000000, "max": 20000000, "step": 500000 },
+      "nonFatalCancer": { "min": 100000, "max": 500000, "step": 25000 },
+      "msdPhysician": { "min": 30000, "max": 150000, "step": 5000 },
+      "msdSupport": { "min": 10000, "max": 80000, "step": 2500 }
+    }
+  },
+  "sources": [
+    {
+      "id": "beir-vii",
+      "title": "Health Risks from Exposure to Low Levels of Ionizing Radiation: BEIR VII Phase 2",
+      "organization": "National Academies of Sciences",
+      "year": 2006,
+      "url": "https://nap.nationalacademies.org/catalog/11340/health-risks-from-exposure-to-low-levels-of-ionizing-radiation",
+      "keyData": "Cancer risk: 1 in 100 at 100 mSv exposure"
+    },
+    {
+      "id": "hhs-ria-2025",
+      "title": "Standard Regulatory Impact Analysis Values",
+      "organization": "HHS Office of the Assistant Secretary for Planning and Evaluation",
+      "year": 2025,
+      "url": "https://aspe.hhs.gov/reports/standard-ria-values",
+      "keyData": "VSL: $13.6M (range $6.3M-$20.7M)"
+    },
+    {
+      "id": "nsc-2023",
+      "title": "NSC Injury Facts - Workers Compensation Costs",
+      "organization": "National Safety Council",
+      "year": 2023,
+      "url": "https://injuryfacts.nsc.org/work/costs/workers-compensation-costs/",
+      "keyData": "Spine injury: $94,285; Average MSD: $47,316"
+    },
+    {
+      "id": "scai-2023",
+      "title": "Occupational Health Hazards of Interventional Cardiologists: 2023 SCAI Survey",
+      "organization": "Society for Cardiovascular Angiography and Interventions",
+      "year": 2023,
+      "url": "https://www.jscai.org/article/S2772-9303(23)00093-0/fulltext",
+      "keyData": "MSD prevalence: 66%; Cervical injury 10x general population"
+    },
+    {
+      "id": "aamc-2023",
+      "title": "AAMC Physician Specialty Data Report",
+      "organization": "Association of American Medical Colleges",
+      "year": 2023,
+      "url": "https://www.aamc.org/data-reports/workforce/report/physician-specialty-data-report",
+      "keyData": "Interventional Cardiologists: 5,639"
+    },
+    {
+      "id": "abim-2025",
+      "title": "ABIM Board Certification Statistics",
+      "organization": "American Board of Internal Medicine",
+      "year": 2025,
+      "url": "https://www.abim.org/about/statistics-data/",
+      "keyData": "Electrophysiologists (active): 2,629"
+    },
+    {
+      "id": "almalki-2025",
+      "title": "Occupational Radiation Exposure Trends 2018-2022",
+      "organization": "Radiation Exposure 5-Year Study",
+      "year": 2025,
+      "keyData": "Cardiologist average: 3.23 mSv/year; Nurses: 1.17 mSv/year"
+    },
+    {
+      "id": "orsif-2018",
+      "title": "Economic Impacts of Radiation Exposures Associated with Interventional Fluoroscopy",
+      "organization": "ORSIF",
+      "year": 2018,
+      "keyData": "Original study baseline: $48,995,000 annual economic cost"
+    }
+  ],
+  "disclaimers": {
+    "general": "This economic model is intended for informational and educational purposes only. It does not constitute medical, legal, or financial advice.",
+    "placeholders": "Some data points are marked as 'placeholder' where current primary sources were unavailable. These values are estimates or carried forward from the 2018 study.",
+    "limitations": [
+      "Does not include cataract-related costs (progression rates unknown)",
+      "Does not include cognitive decline costs (limited data)",
+      "Does not include reproductive health impacts",
+      "Does not include physician replacement/turnover costs",
+      "Does not include hospital revenue impacts",
+      "Does not include litigation costs"
+    ]
+  }
+}

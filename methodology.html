@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodology | ORSIF Economic Impact Study</title>
+    <meta name="description" content="Methodology and data sources for the ORSIF Economic Impact Study">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="methodology">
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/orsif_shield_white.png" alt="ORSIF">
+                <span class="logo-text">Economic Impact Study</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Overview</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="comparison.html">2018 vs 2025</a></li>
+                <li><a href="methodology.html" class="active">Methodology</a></li>
+                <li><a href="https://www.orsif.org" target="_blank">ORSIF.org</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Methodology</h1>
+            <p class="section-intro">
+                Data sources, calculation methods, and assumptions underlying the economic model
+            </p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main>
+        <section>
+            <div class="container">
+                <div class="about-content">
+                    <!-- Overview -->
+                    <div class="methodology-section">
+                        <h2>Overview</h2>
+                        <p>
+                            This economic model quantifies the annual costs of occupational health hazards
+                            associated with interventional fluoroscopy in the United States. The model
+                            follows the methodology established in the original 2018 ORSIF Economic Study,
+                            updated with current data and federal economic valuations.
+                        </p>
+                        <p>
+                            The model estimates costs for two primary categories of health effects:
+                        </p>
+                        <ul>
+                            <li><strong>Cancer:</strong> Both fatal and non-fatal cancers attributable to occupational radiation exposure</li>
+                            <li><strong>Musculoskeletal Disorders (MSDs):</strong> Injuries from wearing heavy personal protective equipment (PPE)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Workforce Estimates -->
+                    <div class="methodology-section">
+                        <h2>Workforce Estimates</h2>
+                        <p>
+                            The at-risk population includes physicians and support staff who work in
+                            interventional fluoroscopy settings:
+                        </p>
+
+                        <h4>Physicians</h4>
+                        <table class="cost-table">
+                            <thead>
+                                <tr>
+                                    <th>Specialty</th>
+                                    <th>2018 Count</th>
+                                    <th>2025 Count</th>
+                                    <th>Source</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Interventional Cardiologists</td>
+                                    <td class="number">3,255</td>
+                                    <td class="number">5,639</td>
+                                    <td>AAMC 2023</td>
+                                    <td>Confirmed</td>
+                                </tr>
+                                <tr>
+                                    <td>Interventional Radiologists</td>
+                                    <td class="number">3,358</td>
+                                    <td class="number">3,358</td>
+                                    <td>2018 baseline</td>
+                                    <td style="color: var(--color-placeholder);">Placeholder</td>
+                                </tr>
+                                <tr>
+                                    <td>Electrophysiologists</td>
+                                    <td class="number">1,925</td>
+                                    <td class="number">2,629</td>
+                                    <td>ABIM 2025</td>
+                                    <td>Confirmed</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td><strong>Total Physicians</strong></td>
+                                    <td class="number"><strong>8,538</strong></td>
+                                    <td class="number"><strong>11,626</strong></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4 style="margin-top: var(--spacing-lg);">Support Staff</h4>
+                        <table class="cost-table">
+                            <thead>
+                                <tr>
+                                    <th>Role</th>
+                                    <th>2018 Count</th>
+                                    <th>2025 Count</th>
+                                    <th>Source</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Nurses</td>
+                                    <td class="number">13,000</td>
+                                    <td class="number">13,000</td>
+                                    <td>2018 estimate</td>
+                                    <td style="color: var(--color-placeholder);">Placeholder</td>
+                                </tr>
+                                <tr>
+                                    <td>Technicians</td>
+                                    <td class="number">11,300</td>
+                                    <td class="number">11,300</td>
+                                    <td>2018 cath-lab specific</td>
+                                    <td style="color: var(--color-placeholder);">Placeholder</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td><strong>Total Support</strong></td>
+                                    <td class="number"><strong>24,300</strong></td>
+                                    <td class="number"><strong>24,300</strong></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p style="margin-top: var(--spacing-md); font-size: 0.9rem; color: var(--color-text-light);">
+                            <strong>Note:</strong> BLS reports 64,700 "Cardiovascular Technologists and Technicians"
+                            but this broader category includes echo technicians, stress test technicians, and others
+                            not routinely exposed to fluoroscopy. The 2018 cath-lab-specific estimates are used
+                            pending updated data from the IMV Cath Lab Survey.
+                        </p>
+                    </div>
+
+                    <!-- Cancer Risk Model -->
+                    <div class="methodology-section">
+                        <h2>Cancer Risk Model</h2>
+                        <p>
+                            Cancer risk is based on the Linear No-Threshold (LNT) model established by the
+                            National Academies' BEIR VII report (2006), which found that the risk of cancer
+                            from ionizing radiation increases linearly with dose.
+                        </p>
+
+                        <h4>Key Assumptions</h4>
+                        <ul>
+                            <li>Lifetime mean occupational exposure: 100 mSv (physicians), 50 mSv (support staff)</li>
+                            <li>Lifetime cancer risk at 100 mSv: 1% (1 in 100)</li>
+                            <li>50% of occupational cancers are fatal</li>
+                            <li>Career duration: 25 years</li>
+                        </ul>
+
+                        <div class="formula-box">
+                            <strong>Annual Cancer Cases = (Workforce × Cancer Risk) / Career Duration</strong><br><br>
+                            Example (Physicians):<br>
+                            Annual Cases = (11,626 × 0.01) / 25 = 4.65 cases/year<br>
+                            Fatal: 4.65 × 0.5 = 2.33 cases/year<br>
+                            Non-Fatal: 4.65 × 0.5 = 2.33 cases/year
+                        </div>
+
+                        <h4 style="margin-top: var(--spacing-lg);">Cancer Cost Valuation</h4>
+                        <p>
+                            Fatal cancer costs are valued using the <strong>Value of Statistical Life (VSL)</strong>,
+                            a standard economic metric used by federal agencies to assess the benefits of
+                            life-saving regulations.
+                        </p>
+                        <ul>
+                            <li><strong>VSL (2025):</strong> $13.6 million (HHS February 2025 guidelines)</li>
+                            <li><strong>VSL Range:</strong> $6.3 million to $20.7 million</li>
+                            <li><strong>Non-fatal cancer:</strong> $250,000 per case (treatment + lost productivity)</li>
+                        </ul>
+                    </div>
+
+                    <!-- MSD Model -->
+                    <div class="methodology-section">
+                        <h2>Musculoskeletal Disorder (MSD) Model</h2>
+                        <p>
+                            MSDs result from wearing heavy lead aprons and other personal protective equipment,
+                            combined with prolonged standing and awkward positioning during procedures.
+                        </p>
+
+                        <h4>Prevalence Data</h4>
+                        <ul>
+                            <li><strong>2018 SCAI Survey:</strong> 53% of interventional cardiologists reported treatment for neck/back pain</li>
+                            <li><strong>2023 SCAI Survey:</strong> 66% reported musculoskeletal problems</li>
+                            <li>Cervical injury rate: 10x higher than general population</li>
+                            <li>Lumbar injury rate: 3x higher than general population</li>
+                        </ul>
+
+                        <h4 style="margin-top: var(--spacing-lg);">Incidence Calculation</h4>
+                        <div class="formula-box">
+                            <strong>Annual MSD Incidence = Career Prevalence / Career Duration</strong><br><br>
+                            Using midpoint of 30-60% career prevalence range:<br>
+                            Annual Incidence = 45% / 25 years = 1.8% per year
+                        </div>
+
+                        <h4 style="margin-top: var(--spacing-lg);">MSD Cost Valuation</h4>
+                        <p>
+                            MSD costs are based on workers' compensation data from the National Safety Council:
+                        </p>
+                        <ul>
+                            <li><strong>Spine injury (physicians):</strong> $94,285 (NSC 2023)</li>
+                            <li><strong>Average MSD (support staff):</strong> $47,316 (NSC 2023)</li>
+                        </ul>
+                        <p>
+                            Physician costs are higher due to: (1) salary-based wage indemnity, and
+                            (2) higher incidence of severe cervical/lumbar injuries.
+                        </p>
+                    </div>
+
+                    <!-- Limitations -->
+                    <div class="methodology-section">
+                        <h2>Limitations</h2>
+                        <p>
+                            The economic model does not attempt to quantify several consequences that could
+                            arise from adverse health effects of chronic exposure to ionizing radiation:
+                        </p>
+
+                        <ul>
+                            <li><strong>Cataracts:</strong> While 50% of interventional physicians develop posterior
+                            subcapsular lens opacities, progression rates to visually significant cataracts
+                            requiring surgery are unknown.</li>
+
+                            <li><strong>Cognitive Decline:</strong> Studies show premature brain aging in
+                            interventionalists, but economic impact is difficult to quantify.</li>
+
+                            <li><strong>Reproductive Health:</strong> Limited data on fertility impacts and
+                            pregnancy complications.</li>
+
+                            <li><strong>Physician Replacement Costs:</strong> Early retirement due to MSDs
+                            or cancer may cost hospitals $1.8-2.8 million per physician to replace.</li>
+
+                            <li><strong>Lost Procedure Revenue:</strong> Work absences and reduced caseloads
+                            impact hospital revenue (not quantified).</li>
+
+                            <li><strong>Litigation:</strong> Potential future lawsuits from affected healthcare
+                            workers (not quantified).</li>
+                        </ul>
+
+                        <div class="warning-box" style="margin-top: var(--spacing-lg);">
+                            <h4>Placeholder Data</h4>
+                            <p style="margin-bottom: 0;">
+                                Several data points in this model are marked as "placeholder" where current
+                                primary sources were unavailable or require paid subscriptions. These values
+                                use either 2018 baseline data or publicly available approximations. Key gaps
+                                include: interventional radiologist count, nurse/technician counts, and
+                                non-fatal cancer treatment costs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Data Sources -->
+                    <div class="methodology-section">
+                        <h2>Data Sources</h2>
+
+                        <ul class="sources-list">
+                            <li>
+                                <strong>BEIR VII Report</strong> (2006)<br>
+                                National Academies: Health Risks from Exposure to Low Levels of Ionizing Radiation<br>
+                                <a href="https://nap.nationalacademies.org/catalog/11340/" target="_blank">nap.nationalacademies.org/catalog/11340</a>
+                            </li>
+                            <li>
+                                <strong>HHS Standard RIA Values</strong> (February 2025)<br>
+                                Office of the Assistant Secretary for Planning and Evaluation<br>
+                                <a href="https://aspe.hhs.gov/reports/standard-ria-values" target="_blank">aspe.hhs.gov/reports/standard-ria-values</a>
+                            </li>
+                            <li>
+                                <strong>NSC Injury Facts 2023</strong><br>
+                                National Safety Council: Workers Compensation Costs<br>
+                                <a href="https://injuryfacts.nsc.org/work/costs/workers-compensation-costs/" target="_blank">injuryfacts.nsc.org</a>
+                            </li>
+                            <li>
+                                <strong>SCAI 2023 Survey</strong><br>
+                                Occupational Health Hazards of Interventional Cardiologists<br>
+                                <a href="https://www.jscai.org/" target="_blank">Journal of the Society for Cardiovascular Angiography and Interventions</a>
+                            </li>
+                            <li>
+                                <strong>AAMC Physician Specialty Data</strong> (2023)<br>
+                                Association of American Medical Colleges<br>
+                                <a href="https://www.aamc.org/data-reports/workforce/" target="_blank">aamc.org/data-reports/workforce</a>
+                            </li>
+                            <li>
+                                <strong>ABIM Board Certification Statistics</strong> (2025)<br>
+                                American Board of Internal Medicine<br>
+                                <a href="https://www.abim.org/about/statistics-data/" target="_blank">abim.org/about/statistics-data</a>
+                            </li>
+                            <li>
+                                <strong>Original ORSIF Economic Study</strong> (December 2018)<br>
+                                Economic Impacts of Radiation Exposures Associated with Interventional Fluoroscopy<br>
+                                <a href="https://www.orsif.org" target="_blank">orsif.org</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/orsif_logo_white.png" alt="ORSIF">
+                    </div>
+                    <p>
+                        Organization for Occupational Radiation Safety in Interventional Fluoroscopy
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>This Study</h4>
+                    <ul>
+                        <li><a href="index.html">Overview</a></li>
+                        <li><a href="calculator.html">Calculator</a></li>
+                        <li><a href="comparison.html">2018 vs 2025</a></li>
+                        <li><a href="methodology.html">Methodology</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>ORSIF Resources</h4>
+                    <ul>
+                        <li><a href="https://www.orsif.org" target="_blank">ORSIF.org</a></li>
+                        <li><a href="https://www.orsif.org/faqs" target="_blank">FAQs</a></li>
+                        <li><a href="https://www.orsif.org/guidelines" target="_blank">Guidelines</a></li>
+                        <li><a href="https://www.orsif.org/join" target="_blank">Join ORSIF</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>
+                        <a href="mailto:info@orsif.org">info@orsif.org</a>
+                    </p>
+                    <p>Washington, D.C.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Organization for Occupational Radiation Safety in Interventional Fluoroscopy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
